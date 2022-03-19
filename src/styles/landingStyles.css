@@ -1,0 +1,707 @@
+@keyframes artistInfEffect {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes titleEffect {
+    from {
+        font-size: 0px;
+    }
+    to {
+        font-size: 18px;
+    }
+}
+
+@keyframes textSectionEffect {
+    from {
+        font-size: 0px;
+    }
+    to {
+        font-size: 100px;
+    }
+}
+
+.textSectionEffect {
+    animation-name: textSectionEffect;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+.effect {
+    animation-name: hoverEffect;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+.backArtist_section {
+    width: 100%;
+    position: absolute;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 30px;
+    fill: white;
+    user-select: none;
+    pointer-events: none;
+}
+
+.activeSection {
+    width: 100% !important;
+}
+
+.hideSection {
+    width: 0 !important;
+}
+
+.backArtist_section>svg {
+    cursor: pointer;
+    pointer-events: all;
+    transition: all ease 0.4s;
+}
+
+.backArtist_section>svg:hover {
+    transform: scale(1.3);
+}
+
+.closeSectionArtist,
+.closeSectionSongs {
+    display: flex;
+    align-self: flex-end;
+    width: 100%;
+    height: 10vh;
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+}
+
+.closeSectionSongs {
+    align-self: flex-start;
+}
+
+.closeSectionArtist>div>svg,
+.closeSectionSongs>div>svg,
+.backArtist_section>svg {
+    cursor: pointer;
+    transition: 0.4s ease all;
+    pointer-events: all;
+}
+
+.closeSectionArtist>div>svg:hover,
+.closeSectionSongs>div>svg:hover {
+    transform: scale(1.3);
+}
+
+.closeSectionArtist>div,
+.closeSectionSongs>div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    fill: white;
+    transition: all 0.4s ease;
+    user-select: none;
+}
+
+.closeSectionArtist>div {
+    margin-right: 30px;
+    justify-content: flex-end;
+}
+
+.closeSectionSongs>div {
+    margin-left: 30px;
+    justify-content: flex-start;
+}
+
+.landingPresentation_container {
+    width: 100%;
+    display: flex;
+    height: 100vh;
+}
+
+.landing_artistSection,
+.landing_songsSection {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 3s ease;
+    background-color: rgba(0, 0, 0, 0.418);
+}
+
+.landing_artistSection video,
+.landing_songsSection video {
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    transition: all 3s ease;
+}
+
+.landing_songsSection>p,
+.landing_artistSection>p {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    color: white;
+    font-weight: 800;
+    font-size: 100px;
+    text-align: center;
+    opacity: 0.3;
+    transition: 0.4s ease all;
+    cursor: pointer;
+}
+
+.landing_songsSection>p:hover,
+.landing_artistSection>p:hover {
+    opacity: 1;
+    letter-spacing: 5px;
+    transform: scale(1.1);
+}
+
+.landingArtists_container,
+.landingSongs_container {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 80vh;
+}
+
+.landingSongs_container {
+    width: 80%;
+    align-items: center;
+}
+
+.search_section_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+
+.search_section {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    border-radius: 20px;
+    border: 1px solid whitesmoke;
+    width: 60%;
+    opacity: 0.7;
+    padding: 10px;
+}
+
+.search_section>div {
+    position: relative;
+    top: 3px;
+    align-self: center;
+    justify-self: center;
+    fill: white;
+}
+
+.search_section>form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.search_section input {
+    width: 100%;
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-weight: 600;
+}
+
+.cards_container,
+.songsCard_container {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.artist_card,
+.songSearch_card {
+    width: 30%;
+    height: 40%;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 50% 50%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.849);
+    transition: 0.4s ease all;
+}
+
+.songSearch_card {
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 60% 40%;
+}
+
+.artist_card:hover,
+.songSearch_card:hover {
+    transform: scale(1.05);
+}
+
+.artist_card img,
+.songSearch_card img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    grid-row: span 2;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.songSearch_card_inf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.artist_card p,
+.songSearch_card_inf p {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    align-self: center;
+    justify-self: center;
+    color: black;
+}
+
+.songSearch_card_inf :nth-child(1) {
+    font-size: 18px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+}
+
+.songSearch_card_inf :nth-child(2) {
+    font-size: 12px;
+}
+
+.artist_card input,
+.songSearch_card input {
+    justify-self: center;
+    align-self: center;
+    padding: 7px 0px;
+    width: 75%;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: black;
+    color: white;
+}
+
+.artistInfContainer {
+    width: 80%;
+    display: grid;
+    height: 85%;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;
+}
+
+.artistInf_image_section {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.artistInf_image_section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.artistsInf_tracksCard_container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(5, 20%);
+    width: 100%;
+    height: 100%;
+}
+
+.artistsInf_tracksCard {
+    display: grid;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.705);
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;
+    animation-name: artistInfEffect;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.artistsInf_tracksCard>img {
+    width: 90%;
+    height: 80%;
+    align-self: center;
+    justify-self: center;
+    object-fit: cover;
+    object-position: center;
+}
+
+.artistInf_options {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.artistInf_options>p {
+    width: 100%;
+    text-align: center;
+    font-size: 0px;
+    font-weight: 600;
+    justify-self: center;
+    align-self: center;
+    animation-name: titleEffect;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-delay: 3.5s;
+}
+
+.artistInf_options>input {
+    justify-self: center;
+    align-self: center;
+    padding: 7px 0px;
+    width: 70%;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: black;
+    color: white;
+}
+
+.artistsInf_tracksCard_container :nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+.artistsInf_tracksCard_container :nth-child(3) {
+    animation-delay: 1.4s;
+}
+
+.artistsInf_tracksCard_container :nth-child(4) {
+    animation-delay: 2.1s;
+}
+
+.artistsInf_tracksCard_container :nth-child(5) {
+    animation-delay: 2.8s;
+}
+
+.songInfContainer {
+    width: 80%;
+    height: 85%;
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
+    color: white;
+}
+
+.imageSongZone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    grid-column: 1/6;
+    grid-row: 1/7;
+}
+
+.imageSongZone img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 5px 5px 10px gray;
+}
+
+.lyricSongZone {
+    width: 100%;
+    height: 100%;
+    grid-column: 6/11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-row: 1/11;
+    font-size: 15px;
+}
+
+.lyricSongZone>div,
+.lyricSongZone h1 {
+    width: 85%;
+    text-align: center;
+}
+
+.lyricSongZone>div {
+    overflow-y: scroll;
+}
+
+.lyricSongZone h1 {
+    font-size: 60px;
+}
+
+.infSongZone {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/6;
+    grid-row: 7/11;
+    flex-direction: column;
+}
+
+.noLyric_case {
+    grid-column: 3/9;
+}
+
+.infSongZone>p {
+    width: 90%;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.infSongZone a {
+    text-decoration-color: gray;
+    color: gray;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 1024px) {
+    @keyframes textSectionEffect {
+        from {
+            font-size: 0px;
+        }
+        to {
+            font-size: 80px;
+        }
+    }
+    .landing_songsSection>p,
+    .landing_artistSection>p {
+        font-size: 80px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    @keyframes textSectionEffect {
+        from {
+            font-size: 0px;
+        }
+        to {
+            font-size: 60px;
+        }
+    }
+    @keyframes titleEffect {
+        from {
+            font-size: 0px;
+        }
+        to {
+            font-size: 14px;
+        }
+    }
+    .landing_songsSection>p,
+    .landing_artistSection>p {
+        font-size: 60px;
+    }
+    .search_section input {
+        font-size: 16px;
+    }
+    .artist_card p,
+    .songSearch_card_inf p {
+        font-size: 13px;
+    }
+    .songSearch_card_inf :nth-child(1) {
+        font-size: 14px;
+    }
+    .songSearch_card_inf :nth-child(2) {
+        font-size: 10px;
+    }
+    .artist_card input,
+    .songSearch_card input {
+        padding: 5px;
+        font-size: 11px;
+    }
+    .lyricSongZone {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    @keyframes textSectionEffect {
+        from {
+            font-size: 0px;
+        }
+        to {
+            font-size: 45px;
+        }
+    }
+    .landing_songsSection>p,
+    .landing_artistSection>p {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .artist_card,
+    .songSearch_card {
+        width: 100%;
+        height: 18%;
+        grid-template-columns: 30% 50% 20%;
+        grid-template-rows: 100%;
+    }
+    .backArtist_section,
+    .closeSectionSongs>div {
+        margin-left: 10px;
+    }
+    .closeSectionArtist>div {
+        margin-right: 10px;
+    }
+    .lyricSongZone h1 {
+        font-size: 45px;
+    }
+    .infSongZone>p,
+    .infSongZone a {
+        font-size: 15px;
+    }
+    .lyricSongZone>div {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    @keyframes titleEffect {
+        from {
+            font-size: 0px;
+        }
+        to {
+            font-size: 12px;
+        }
+    }
+    .search_section {
+        padding: 5px;
+    }
+    .cards_container,
+    .songsCard_container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .artistsInf_tracksCard {
+        grid-template-columns: 25% 75%;
+    }
+    .artist_card p,
+    .songSearch_card_inf p {
+        font-size: 12px;
+    }
+    .artistInf_options>input {
+        font-size: 11px;
+        padding: 4px 0px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .landing_artistSection,
+    .landing_songsSection,
+    .landing_artistSection video,
+    .landing_songsSection video {
+        transition: all 1.5s ease;
+    }
+    .artistInfContainer {
+        grid-template-columns: 100%;
+        grid-template-rows: 30% 70%;
+    }
+    .lyricSongZone h1 {
+        font-size: 40px;
+    }
+    .infSongZone>p,
+    .infSongZone a {
+        font-size: 13px;
+    }
+    .lyricSongZone>div {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    @keyframes textSectionEffect {
+        from {
+            font-size: 0px;
+        }
+        to {
+            font-size: 30px;
+        }
+    }
+    @keyframes titleEffect {
+        from {
+            font-size: 0px;
+        }
+        to {
+            font-size: 10px;
+        }
+    }
+    .search_section input {
+        font-size: 12px;
+    }
+    .landing_songsSection>p,
+    .landing_artistSection>p {
+        font-size: 30px;
+    }
+    .backArtist_section,
+    .closeSectionSongs>div {
+        margin-left: 5px;
+    }
+    .closeSectionArtist>div {
+        margin-right: 5px;
+    }
+    .lyricSongZone h1 {
+        font-size: 30px;
+    }
+    .infSongZone>p,
+    .infSongZone a {
+        font-size: 13px;
+    }
+    .lyricSongZone>div {
+        font-size: 8px;
+    }
+}
+
+.networkError {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    border-radius: 8px;
+    background-color: white;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 20px 30px;
+}
